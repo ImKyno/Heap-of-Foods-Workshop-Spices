@@ -1,0 +1,15 @@
+<Atlas>
+    <Texture filename="hofs_inventoryimages.tex" />
+    <Elements>
+        <Element name="spice_cold.tex" u1="0.001953125" v1="0.751953125" u2="0.248046875" v2="0.998046875" />
+        <Element name="spice_cold_over.tex" u1="0.251953125" v1="0.751953125" u2="0.498046875" v2="0.998046875" />
+        <Element name="spice_cure.tex" u1="0.501953125" v1="0.751953125" u2="0.748046875" v2="0.998046875" />
+        <Element name="spice_cure_over.tex" u1="0.751953125" v1="0.751953125" u2="0.998046875" v2="0.998046875" />
+        <Element name="spice_fed.tex" u1="0.001953125" v1="0.501953125" u2="0.248046875" v2="0.748046875" />
+        <Element name="spice_fed_over.tex" u1="0.251953125" v1="0.501953125" u2="0.498046875" v2="0.748046875" />
+        <Element name="spice_fire.tex" u1="0.501953125" v1="0.501953125" u2="0.748046875" v2="0.748046875" />
+        <Element name="spice_fire_over.tex" u1="0.751953125" v1="0.501953125" u2="0.998046875" v2="0.748046875" />
+        <Element name="spice_mind.tex" u1="0.001953125" v1="0.251953125" u2="0.248046875" v2="0.498046875" />
+        <Element name="spice_mind_over.tex" u1="0.251953125" v1="0.251953125" u2="0.498046875" v2="0.498046875" />
+    </Elements>
+</Atlas>
