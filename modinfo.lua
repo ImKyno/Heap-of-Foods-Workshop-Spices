@@ -1,5 +1,5 @@
 name                        = "Heap of Foods - Warly Spices"
-version                     = "1.0-A"
+version                     = "1.1-A"
 
 description                 = 
 [[
@@ -7,8 +7,8 @@ description                 =
 
 󰀏 This Mod requires that Heap of Foods is enabled. It does nothing on its own. Check Workshop Page for more details.
 
-󰀌 Mod Version: 1.0-A
-󰀧 Update: Launch
+󰀌 Mod Version: 1.1-A
+󰀧 Update: Spring Cleaning
 ]]
 
 author                      = "Kyno"
@@ -44,8 +44,8 @@ if locale == "pt" then
 
 󰀏 Este Mod requer que o Mod principal esteja ativo. Este Mod não faz nada por si só. Cheque a página da Oficina para mais detalhes.
 
-󰀌 Versão do Mod: 1.0-A
-󰀧 Atualização: Lançamento
+󰀌 Versão do Mod: 1.1-A
+󰀧 Atualização: Limpeza de Primavera
 ]]
 end
 
@@ -59,7 +59,7 @@ if locale == "zh" or locale == "zhr" then
 
 󰀏 This Mod requires that Heap of Foods is enabled. It does nothing on its own.  Check Workshop Page for more details.
 
-󰀌 Mod版本: 1.0-A
-󰀧 Update: Launch
+󰀌 Mod版本: 1.1-A
+󰀧 Update: Spring Cleaning
 ]]
 end

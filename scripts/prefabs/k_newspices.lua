@@ -2,6 +2,10 @@ local assets =
 {
 	Asset("ANIM", "anim/spices.zip"),
 	Asset("ANIM", "anim/kyno_spices.zip"),
+	
+	Asset("IMAGE", "images/inventoryimages/hofs_inventoryimages.tex"),
+	Asset("ATLAS", "images/inventoryimages/hofs_inventoryimages.xml"),
+	Asset("ATLAS_BUILD", "images/inventoryimages/hofs_inventoryimages.xml", 256),
 }
 
 local bankbuild = "kyno_spices"

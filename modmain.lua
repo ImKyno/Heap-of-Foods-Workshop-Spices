@@ -1,16 +1,21 @@
--- Common Dependencies.
-local _G               = GLOBAL
-local require          = _G.require
-
--- Mod Dependencies.
-local hofs_init_misc =
+Assets =
 {
-	"hofs_assets",
-	"hofs_prefabs",
-	"hofs_tuning",
-	"hofs_postinits_misc",
+	Asset("ANIM", "anim/kyno_spices.zip"),
+	
+	Asset("IMAGE", "images/inventoryimages/hofs_inventoryimages.tex"),
+	Asset("ATLAS", "images/inventoryimages/hofs_inventoryimages.xml"),
+	Asset("ATLAS_BUILD", "images/inventoryimages/hofs_inventoryimages.xml", 256),
 }
 
-for _, v in pairs(hofs_init_misc) do
-	modimport("hofs_init/misc/"..v)
-end
+PrefabFiles =
+{
+	"k_newspices",
+}
+
+-- Import the new Mod Spices.
+require("hof_spicedfoods")
+
+-- Required for Warly crafting.
+AddPrefabPostInit("warly", function(inst)
+	inst:AddTag("hof_spicemaker")
+end)
