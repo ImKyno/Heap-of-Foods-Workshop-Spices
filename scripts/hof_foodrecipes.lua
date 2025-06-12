@@ -2654,6 +2654,7 @@ local kyno_foods =
 		potlevel = "high",
 		scale = 1.3,
 		floater = {"med", nil, 0.65},
+		tags = {"honeyed"},
 		card_def = {ingredients = {{"baconeggs", 1}, {"kyno_flour", 1}, {"butter", 1}, {"kyno_syrup", 1}}},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater.components.mightiness ~= nil then
@@ -2676,6 +2677,21 @@ local kyno_foods =
 		potlevel = "high",
 		floater = {"med", nil, 0.65},
 		card_def = {ingredients = {{"kyno_flour", 1}, {"smallmeat", 1}, {"carrot", 1}, {"kyno_oil", 1}}},
+	},
+	
+	coxinha =
+	{
+		test = function(cooker, names, tags) return (names.drumstick or names.drumstick_cooked) and tags.flour and names.kyno_oil
+		and names.kyno_spotspice end,
+		priority = 30,
+		foodtype = FOODTYPE.MEAT,
+		perishtime = TUNING.PERISH_MED,
+		health = 15,
+		hunger = 32.5,
+		sanity = 0,
+		cooktime = 1.5,
+		floater = {"med", nil, 0.65},
+		card_def = {ingredients = {{"drumstick", 1}, {"kyno_flour", 1}, {"kyno_oil", 1}, {"kyno_spotspice", 1}}},
 	},
 	
 	--[[
