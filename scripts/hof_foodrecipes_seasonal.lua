@@ -15,7 +15,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "BERRYSAUCE",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "xmas"},
 		card_def = {ingredients = {{"berries", 2}, {"honey", 2}}},
 	},
@@ -34,14 +34,14 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "BIBINGKA",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
 		card_def = {ingredients = {{"succulent_picked", 2}, {"foliage", 1}, {"carrot", 1}}},
 	},
 	
 	festive_cabbagerolls =
 	{
-		test = function(cooker, names, tags) return (names.kyno_waterycress and names.kyno_waterycress >= 2) and names.kyno_syrup and not tags.flour 
+		test = function(cooker, names, tags) return (names.kyno_waterycress and names.kyno_waterycress >= 2) and tags.syrup and not tags.flour 
 		and (CONFIGS_HOF.SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.WINTERS_FEAST)) end,
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
@@ -53,7 +53,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "CABBAGEROLLS",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
 		card_def = {ingredients = {{"kyno_waterycress", 2}, {"kyno_syrup", 2}}},
 	},
@@ -72,14 +72,14 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "FESTIVEFISH",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
 		card_def = {ingredients = {{"pondfish", 2}, {"succulent_picked", 2}}},
 	},
 	
 	festive_goodgravy =
 	{
-		test = function(cooker, names, tags) return names.kyno_syrup and tags.flour and tags.meat 
+		test = function(cooker, names, tags) return tags.syrup and tags.flour and tags.meat 
 		and (CONFIGS_HOF.SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.WINTERS_FEAST)) end,
 		priority = 35,
 		foodtype = FOODTYPE.MEAT,
@@ -91,7 +91,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "GRAVY",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "xmas"},
 		card_def = {ingredients = {{"kyno_syrup", 1}, {"kyno_flour", 1}, {"meat", 1}}},
 	},
@@ -110,7 +110,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "LATKES",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
 		card_def = {ingredients = {{"potato", 3}, {"goatmilk", 1}}},
 	},
@@ -131,14 +131,14 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "LUTEFISK",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
 		card_def = {ingredients = {{"pondfish", 2}, {"pepper", 1}, {"foliage", 1}}},
 	},
 	
 	festive_mulledpunch = 
 	{
-		test = function(cooker, names, tags) return names.kyno_syrup and tags.sweetener and tags.frozen and not names.forgetmelots 
+		test = function(cooker, names, tags) return tags.syrup and tags.sweetener and tags.frozen and not names.forgetmelots 
 		and not tags.meat and not tags.berries and not tags.fruit and not names.cutlichen and (CONFIGS_HOF.SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.WINTERS_FEAST)) end,
 		priority = 35,
 		foodtype = FOODTYPE.GOODIES,
@@ -150,7 +150,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "MULLEDDRINK",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "xmas"},
 		card_def = {ingredients = {{"kyno_syrup", 1}, {"honey", 2}, {"ice", 1}}},
 	},
@@ -169,7 +169,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "PANETTONE",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
 		card_def = {ingredients = {{"kyno_flour", 2}, {"pomegranate", 2}}},
 	},
@@ -188,14 +188,14 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "PAVLOVA",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "xmas"},
 		card_def = {ingredients = {{"kyno_flour", 1}, {"honey", 1}, {"cave_banana", 2}}},
 	},
 	
 	festive_pickledherring =
 	{
-		test = function(cooker, names, tags) return tags.fish and (names.kyno_spotspice and names.kyno_spotspice >= 2) and not tags.flour 
+		test = function(cooker, names, tags) return tags.fish and (tags.spotspice and tags.spotspice >= 2) and not tags.flour 
 		and (CONFIGS_HOF.SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.WINTERS_FEAST)) end,
 		priority = 35,
 		foodtype = FOODTYPE.MEAT,
@@ -207,7 +207,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "PICKLEDHERRING",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
 		card_def = {ingredients = {{"pondfish", 2}, {"kyno_spotspice", 2}}},
 	},
@@ -226,7 +226,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "POLISHCOOKIE",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "xmas"},
 		card_def = {ingredients = {{"kyno_flour", 1}, {"goatmilk", 1}, {"honey", 2}}},
 	},
@@ -245,7 +245,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "PUMPKINPIE",
-		floater = {"med", nil, 0,65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "xmas"},
 		card_def = {ingredients = {{"pumpkin", 1}, {"kyno_flour", 1}, {"honey", 1}}},
 	},
@@ -253,7 +253,7 @@ local kyno_foods_seasonal =
 	festive_roastedturkey =
 	{
 		test = function(cooker, names, tags) return (names.drumstick or names.drumstick_cooked) 
-		and (names.kyno_spotspice and names.kyno_spotspice >= 2) and names.succulent_picked and not tags.fruit and (CONFIGS_HOF.SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.WINTERS_FEAST)) end,
+		and (tags.spotspice and tags.spotspice >= 2) and names.succulent_picked and not tags.fruit and (CONFIGS_HOF.SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.WINTERS_FEAST)) end,
 		priority = 35,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_MED,
@@ -264,7 +264,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "ROASTTURKEY",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
 		card_def = {ingredients = {{"drumstick", 1}, {"succulent_picked", 1}, {"kyno_spotspice", 2}}},
 	},
@@ -283,7 +283,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "STUFFING",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
 		card_def = {ingredients = {{"kyno_flour", 1}, {"carrot", 2}, {"berries", 1}}},
 	},
@@ -302,7 +302,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "SWEETPOTATO",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
 		card_def = {ingredients = {{"kyno_flour", 2}, {"kyno_sweetpotato", 2}}},
 	},
@@ -321,7 +321,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "TAMALES",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
 		card_def = {ingredients = {{"kyno_flour", 1}, {"goatmilk", 1}, {"corn", 2}}},
 	},
@@ -340,7 +340,7 @@ local kyno_foods_seasonal =
 		potlevel = "med",
 		scale = 1,
 		nameoverride = "TOURTIERE",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
 		card_def = {ingredients = {{"meat", 1}, {"kyno_flour", 1}, {"kyno_bacon", 1}, {"potato", 1}}},
 	},
@@ -348,7 +348,7 @@ local kyno_foods_seasonal =
 	-- Hallowed Nights Foods.
 	spooky_brain_noodles =
 	{
-		test = function(cooker, names, tags) return tags.flour and names.kyno_spotspice and tags.beanbug and tags.meat 
+		test = function(cooker, names, tags) return tags.flour and tags.spotspice and tags.beanbug and tags.meat 
 		and (CONFIGS_HOF.SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.HALLOWED_NIGHTS)) end,
 		priority = 35,
 		foodtype = FOODTYPE.MEAT,
@@ -358,7 +358,7 @@ local kyno_foods_seasonal =
 		sanity = 30,
 		cooktime = 1.2,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween"},
 		card_def = {ingredients = {{"kyno_flour", 1}, {"kyno_spotspice", 1}, {"kyno_beanbugs", 1}, {"meat", 1}}},
 	},
@@ -376,7 +376,7 @@ local kyno_foods_seasonal =
 		sanity = -20,
 		cooktime = 1.5,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween", "monstermeat"},
 		card_def = {ingredients = {{"gorge_bread", 1}, {"monstermeat", 1}, {"onion", 1}, {"kyno_cucumber", 1}}},
 		oneatenfn = function(inst, eater)
@@ -401,7 +401,7 @@ local kyno_foods_seasonal =
 		sanity = -30,
 		cooktime = 2,
 		potlevel = "low",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween"},
 		card_def = {ingredients = {{"boneshard", 1}, {"kyno_sugar", 1}, {"kyno_flour", 1}, {"butter", 1}}},
 	},
@@ -421,7 +421,7 @@ local kyno_foods_seasonal =
 		stacksize = 3,
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_DESANITY,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween", "honeyed"},
 		card_def = {ingredients = {{"royal_jelly", 1}, {"kyno_sugar", 1}, {"nightmarefuel", 2}}},
 		prefabs = { "kyno_insanitybuff" },
@@ -444,7 +444,7 @@ local kyno_foods_seasonal =
 		sanity = -20,
 		cooktime = .10,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween"},
 		card_def = {ingredients = {{"livinglog", 1}, {"goatmilk", 1}, {"ice", 1}, {"kyno_sugar", 1}}},
 		oneatenfn = function(inst, eater)
@@ -468,7 +468,7 @@ local kyno_foods_seasonal =
 		sanity = 25,
 		cooktime = 2,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween"},
 		card_def = {ingredients = {{"pumpkin", 1}, {"kyno_pineapple_halved", 1}, {"pomegranate", 1}, {"goatmilk", 1}}},
 	},
@@ -487,7 +487,7 @@ local kyno_foods_seasonal =
 		stacksize = 2,
 		potlevel = "low",
 		fireproof = true,
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween"},
 		card_def = {ingredients = {{"boneshard", 1}, {"kyno_sugar", 2}, {"nightmarefuel", 1}}},
 	},
@@ -495,7 +495,7 @@ local kyno_foods_seasonal =
 	spooky_tacodile =
 	{
 		test = function(cooker, names, tags) return tags.flour and (names.pepper or names.pepper_cooked) and
-		(names.onion or names.onion_cooked) and names.kyno_spotspice and (CONFIGS_HOF.SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.HALLOWED_NIGHTS)) end,
+		(names.onion or names.onion_cooked) and tags.spotspice and (CONFIGS_HOF.SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.HALLOWED_NIGHTS)) end,
 		priority = 35,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
@@ -506,7 +506,7 @@ local kyno_foods_seasonal =
 		sanity = 10,
 		cooktime = 1.7,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween"},
 		card_def = {ingredients = {{"kyno_flour", 1}, {"pepper", 1}, {"onion", 1}, {"kyno_spotspice", 1}}},
 	},

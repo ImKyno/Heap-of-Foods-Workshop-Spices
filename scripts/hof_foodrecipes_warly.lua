@@ -2,7 +2,7 @@ local kyno_warly_foods =
 {
 	musselbouillabaise =
 	{
-		test = function(cooker, names, tags) return (names.kyno_mussel and names.kyno_mussel >= 3) and tags.veggie and not tags.inedible 
+		test = function(cooker, names, tags) return (tags.mussel and tags.mussel >= 3) and tags.veggie and not tags.inedible 
 		and not tags.sweetener and not names.kyno_mussel_cooked end,
 		priority = 30,
 		foodtype = FOODTYPE.MEAT,
@@ -12,7 +12,7 @@ local kyno_warly_foods =
 		sanity = 15,
 		cooktime = 2,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
 		card_def = {ingredients = {{"kyno_mussel", 3}, {"carrot", 1}}},
 	},
@@ -30,14 +30,14 @@ local kyno_warly_foods =
 		sanity = 15,
 		cooktime = 2,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
 		card_def = {ingredients = {{"kyno_sweetpotato", 2}, {"bird_egg", 2}}},
 	},
 	
 	gorge_meat_stew =
 	{
-		test = function(cooker, names, tags) return (tags.meat and tags.meat >= 3) and names.kyno_spotspice and not (tags.monster and tags.monster > 1) end,
+		test = function(cooker, names, tags) return (tags.meat and tags.meat >= 3) and tags.spotspice and not (tags.monster and tags.monster > 1) end,
 		priority = 35,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_SLOW,
@@ -46,7 +46,7 @@ local kyno_warly_foods =
 		sanity = 10,
 		cooktime = 1,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
 		card_def = {ingredients = {{"meat", 3}, {"kyno_spotspice", 1}}},
 	},
@@ -54,7 +54,7 @@ local kyno_warly_foods =
 	gorge_cheeseburger =
 	{
 		test = function(cooker, names, tags) return tags.bread and tags.meat and tags.foliage and (tags.cheese or tags.dairy)
-		and not names.kyno_bacon and not names.kyno_bacon_cooked end,
+		and not tags.bacon end,
 		priority = 35,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_FASTISH,
@@ -63,7 +63,7 @@ local kyno_warly_foods =
 		sanity = 30,
 		cooktime = 1.2,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
 		card_def = {ingredients = {{"gorge_bread", 1}, {"meat", 1}, {"foliage", 1}, {"goatmilk", 1}}},
 	},
@@ -79,7 +79,7 @@ local kyno_warly_foods =
 		sanity = 20,
 		cooktime = 2.5,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
 		card_def = {ingredients = {{"meat", 1}, {"kyno_flour", 1}, {"goatmilk", 1}, {"tomato", 1}}},
 	},
@@ -95,7 +95,7 @@ local kyno_warly_foods =
 		sanity = 10,
 		cooktime = 1,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
 		card_def = {ingredients = {{"meat", 2}, {"gorge_bread", 1}, {"carrot", 1}}},
 	},
@@ -111,7 +111,7 @@ local kyno_warly_foods =
 		sanity = 60,
 		cooktime = 1,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
 		card_def = {ingredients = {{"berries", 1}, {"kyno_flour", 1}, {"goatmilk", 2}}},
 	},
@@ -127,7 +127,7 @@ local kyno_warly_foods =
 		sanity = 33,
 		cooktime = 0.5,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood", "honeyed", "drinkable_food"},
 		card_def = {ingredients = {{"kyno_piko", 1}, {"kyno_tealeaf", 1}, {"honey", 1}, {"ice", 1}}},
 		prefabs = { "buff_sleepresistance" },
@@ -154,7 +154,7 @@ local kyno_warly_foods =
 		sanity = 5,
 		cooktime = 1,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
 		card_def = {ingredients = {{"onion", 2}, {"kyno_waterycress", 1}, {"foliage", 1}}},
 	},
@@ -173,7 +173,7 @@ local kyno_warly_foods =
 		stacksize = 3,
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_RESANITY,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood", "honeyed"},
 		card_def = {ingredients = {{"royal_jelly", 1}, {"green_cap", 3}}},
         prefabs = { "kyno_sanityregenbuff" },
@@ -196,7 +196,7 @@ local kyno_warly_foods =
 		stacksize = 3,
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_REHUNGER,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood", "honeyed"},
 		card_def = {ingredients = {{"royal_jelly", 1}, {"butter", 1}, {"honey", 2}}},
         prefabs = { "kyno_hungerregenbuff" },
@@ -219,7 +219,7 @@ local kyno_warly_foods =
 		stacksize = 3,
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_REALL,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood", "honeyed"},
 		card_def = {ingredients = {{"royal_jelly", 2}, {"dragonfruit", 1}, {"pomegranate", 1}}},
         prefabs = { "kyno_superregenbuff" },
@@ -230,7 +230,7 @@ local kyno_warly_foods =
 	
 	berrysundae =
 	{
-		test = function(cooker, names, tags) return tags.berries and tags.dairy and tags.frozen and names.kyno_syrup
+		test = function(cooker, names, tags) return tags.berries and tags.dairy and tags.frozen and tags.syrup
 		and not tags.meat and not tags.veggie and not tags.inedible and not tags.egg end,
 		priority = 10,
 		foodtype = FOODTYPE.GOODIES,
@@ -242,7 +242,7 @@ local kyno_warly_foods =
 		sanity = 60,
 		cooktime = .10,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood", "honeyed"},
 		card_def = {ingredients = {{"berries", 1}, {"goatmilk", 1}, {"kyno_syrup", 1}, {"ice", 1}}},
 		prefabs = { "kyno_heatbuff" },
@@ -253,7 +253,7 @@ local kyno_warly_foods =
 	
 	cinnamonroll =
 	{
-		test = function(cooker, names, tags) return tags.flour and names.kyno_syrup and names.kyno_spotspice and tags.butter end,
+		test = function(cooker, names, tags) return tags.flour and tags.syrup and tags.spotspice and tags.butter end,
 		priority = 30,
 		foodtype = FOODTYPE.GOODIES,
 		perishtime = TUNING.PERISH_FAST,
@@ -262,14 +262,14 @@ local kyno_warly_foods =
 		sanity = 20,
 		cooktime = 2,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood", "honeyed"},
 		card_def = {ingredients = {{"kyno_flour", 1}, {"kyno_syrup", 1}, {"kyno_spotspice", 1}, {"butter", 1}}},
 	},
 	
 	milkshake_prismatic =
 	{
-		test = function(cooker, names, tags) return tags.milk and tags.berries and (names.kyno_syrup and names.kyno_syrup >= 2) end,
+		test = function(cooker, names, tags) return tags.milk and tags.berries and (tags.syrup and tags.syrup >= 2) end,
 		priority = 10,
 		foodtype = FOODTYPE.GOODIES,
 		perishtime = TUNING.PERISH_FAST,
@@ -280,14 +280,14 @@ local kyno_warly_foods =
 		sanity = 60,
 		cooktime = .10,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood", "honeyed"},
 		card_def = {ingredients = {{"goatmilk", 1}, {"berries", 1}, {"kyno_syrup", 2}}},
 	},
 	
 	nachos =
 	{
-		test = function(cooker, names, tags) return names.kyno_oil and names.kyno_spotspice and tags.cheese and names.corn and not names.corn_cooked end,
+		test = function(cooker, names, tags) return names.kyno_oil and tags.spotspice and tags.cheese and names.corn and not names.corn_cooked end,
 		priority = 35,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
@@ -296,7 +296,7 @@ local kyno_warly_foods =
 		sanity = 10,
 		cooktime = 2,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
 		card_def = {ingredients = {{"kyno_oil", 1}, {"kyno_spotspice", 1}, {"cheese_yellow", 1}, {"corn", 1}}},
 	},
@@ -315,7 +315,7 @@ local kyno_warly_foods =
 		sanity = 33,
 		cooktime = 2,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
 		card_def = {ingredients = {{"kyno_kokonut_halved", 1}, {"green_cap", 1}, {"succulent_picked", 1}, {"pepper", 1}}},
 		prefabs = { "kyno_coldbuff" },
@@ -336,7 +336,7 @@ local kyno_warly_foods =
 		sanity = 25,
 		cooktime = 1.7,
 		potlevel = "med",
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
 		card_def = {ingredients = {{"kyno_rice", 2}, {"kyno_white_cap", 1}, {"goatmilk", 1}}},
 	},
@@ -344,7 +344,7 @@ local kyno_warly_foods =
 	meatskillet =
 	{
 		test = function(cooker, names, tags) return tags.meat and (names.pepper or names.pepper_cooked) and 
-		(names.garlic or names.garlic_cooked) and names.kyno_spotspice end,
+		(names.garlic or names.garlic_cooked) and tags.spotspice end,
 		priority = 30,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_SLOW,
@@ -356,7 +356,7 @@ local kyno_warly_foods =
 		cooktime = 2,
 		potlevel = "high",
 		nochill = true,
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood"},
 		card_def = {ingredients = {{"meat", 1}, {"pepper", 1}, {"garlic", 1}, {"kyno_spotspice", 1}}},
 	},
@@ -373,7 +373,7 @@ local kyno_warly_foods =
 		hunger = 12.5,
 		sanity = 5,
 		cooktime = 0.5,
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood", "honeyed", "drinkable_food"},
 		card_def = {ingredients = {{"kyno_piko_orange", 1}, {"kyno_tealeaf", 1}, {"honey", 1}, {"ice", 1}}},
 	},
@@ -393,12 +393,72 @@ local kyno_warly_foods =
 		cooktime = 0.5,
 		potlevel = "low",
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_SANITYRATE,
-		floater = {"med", nil, 0.65},
+		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood", "honeyed", "drinkable_food"},
 		card_def = {ingredients = {{"kyno_piko_orange", 1}, {"kyno_tealeaf", 1}, {"honey", 2}}},
 		prefabs = { "kyno_sanityratebuff" },
 		oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_sanityratebuff", "kyno_sanityratebuff")
+		end,
+	},
+	
+	lazydessert =
+	{
+		test = function(cooker, names, tags) return names.townportaltalisman and names.rocks and tags.sweetener end,
+		priority = 1,
+		foodtype = FOODTYPE.ELEMENTAL,
+		perishtime = nil,
+		rocktribute = 18,
+		health = -30,
+		hunger = 12.5,
+		sanity = 0,
+		cooktime = 2,
+		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_ANTLION,
+		floater = TUNING.HOF_FLOATER,
+		tags = {"masterfood", "honeyed", "nospice"},
+		card_def = {ingredients = {{"townportaltalisman", 1}, {"rocks", 2}, {"honey", 1}}},
+	},
+	
+	lavaeeggboiled =
+	{
+		test = function(cooker, names, tags) return names.lavae_egg and names.firenettles and (names.pepper or names.pepper_cooked) and not tags.frozen end,
+		priority = 100,
+		foodtype = FOODTYPE.MEAT,
+		perishtime = TUNING.PERISH_SLOW,
+		fireproof = true,
+		temperature = TUNING.HOT_FOOD_BONUS_TEMP,
+        temperatureduration = TUNING.BUFF_FOOD_TEMP_DURATION,
+		health = 60,
+		hunger = 100,
+		sanity = 15,
+		cooktime = 2,
+		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_FIREIMMUNITY,
+		floater = TUNING.HOF_FLOATER,
+		tags = {"masterfood"},
+		card_def = {ingredients = {{"lavae_egg", 1}, {"firenettles", 1}, {"pepper", 2}}},
+		oneatenfn = function(inst, eater)
+			eater:AddDebuff("kyno_fireimmunitybuff", "kyno_fireimmunitybuff")
+		end,
+	},
+	
+	tiramisu = -- Dry + Small Speed buffs.
+	{
+		test = function(cooker, names, tags) return names.kyno_coffeebeans_cooked and tags.chocolate and tags.dairy and not names.kyno_coffeebeans end,
+		priority = 30,
+		foodtype = FOODTYPE.GOODIES,
+		perishtime = TUNING.PERISH_MED,
+		health = 20,
+		hunger = 32.5,
+		sanity = 15,
+		cooktime = 1.5,
+		scale = .9,
+		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_SPEED, 
+		floater = TUNING.HOF_FLOATER,
+		tags = {"masterfood"},
+		card_def = {ingredients = {{"kyno_coffeebeans_cooked", 1}, {"chocolate_black", 1}, {"goatmilk", 1}}},
+		prefabs = { "buff_moistureimmunity" },
+		oneatenfn = function(inst, eater)
+			eater:AddDebuff("buff_moistureimmunity", "buff_moistureimmunity")
 		end,
 	},
 }

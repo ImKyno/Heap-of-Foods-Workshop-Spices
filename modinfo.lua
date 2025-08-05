@@ -1,5 +1,5 @@
 name                        = "Heap of Foods - Warly Spices"
-version                     = "1.2-A"
+version                     = "1.3-A"
 
 description                 = 
 [[
@@ -7,8 +7,8 @@ description                 =
 
 󰀏 This Mod requires that Heap of Foods is enabled. It does nothing on its own. Check Workshop Page for more details.
 
-󰀌 Mod Version: 1.2-A
-󰀧 Update: Seaside Summer
+󰀌 Mod Version: 1.3-A
+󰀧 Update: Seaside Summer (Part II)
 ]]
 
 author                      = "Kyno"
@@ -44,8 +44,8 @@ if locale == "pt" then
 
 󰀏 Este Mod requer que o Mod principal esteja ativo. Este Mod não faz nada por si só. Cheque a página da Oficina para mais detalhes.
 
-󰀌 Versão do Mod: 1.2-A
-󰀧 Atualização: Verão à Beira-mar
+󰀌 Versão do Mod: 1.3-A
+󰀧 Atualização: Verão à Beira-mar (Parte II)
 ]]
 end
 
@@ -53,13 +53,13 @@ end
 if locale == "zh" or locale == "zhr" then
 	name                   = "Heap of Foods - Warly Spices"
 
-	description           = 
+	description            = 
 [[
 󰀄 Adds new Warly Spices for the Heap of Foods Mod!
 
 󰀏 This Mod requires that Heap of Foods is enabled. It does nothing on its own.  Check Workshop Page for more details.
 
-󰀌 Mod版本: 1.2-A
-󰀧 Update: Spring Cleaning
+󰀌 Mod版本: 1.3-A
+󰀧 Update: Seaside Summer (Part II)
 ]]
 end
