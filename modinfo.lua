@@ -7,7 +7,7 @@ local STRINGS =
 	NAME = 
 	{
 		"Heap of Foods - Warly Spices",
-		zh  = "食物堆积 - 瓦利香料 (Heap of Foods - Warly Spices)",
+		zh  = "更多料理 - 沃利香料 (Heap of Foods - Warly Spices)",
 		zht = "食物堆積 - 瓦利香料 (Heap of Foods - Warly Spices)",
 		pt  = "Amontoado de Comidas - Temperos do Warly (Heap of Foods - Warly Spices)",
 		pl  = "Stos jedzenia - Przyprawy Warly'ego (Heap of Foods - Warly Spices)",
@@ -21,17 +21,17 @@ local STRINGS =
 
 󰀏 This Mod requires that Heap of Foods is enabled. It does nothing on its own. Check Workshop Page for more details.
 
-󰀌 Mod Version: 1.5-A
-󰀧 Update: Preparing The Grounds
+󰀌 Mod Version: 1.8-A
+󰀧 Update: Gone Fishing
 ]],
 		zh  =
 [[
-󰀄 为《食物堆积 (Heap of Foods)》模组新增瓦利香料！
+󰀄 为《更多料理 (Heap of Foods)》模组新增沃利的专属香料！
 
-󰀏 此模组需要启用《食物堆积 (Heap of Foods)》。它本身没有任何功能。请查看工作坊页面获取更多信息。
+󰀏 此模组需要启用《更多料理 (Heap of Foods)》。它本身没有任何功能。请查看工作坊页面获取更多信息。
 
-󰀌 Mod 版本： 1.5-A
-󰀧 更新内容： 准备地基
+󰀌 Mod 版本： 1.8-A
+󰀧 更新内容： 钓鱼之旅
 ]],
 		zht =
 [[
@@ -39,8 +39,8 @@ local STRINGS =
 
 󰀏 此模組需要啟用《食物堆積 (Heap of Foods)》。它本身沒有任何功能。請查看工作坊頁面以獲取更多資訊。
 
-󰀌 Mod 版本： 1.5-A
-󰀧 更新內容： 準備地基
+󰀌 Mod 版本： 1.8-A
+󰀧 更新內容： 去釣魚
 ]],
 		pt  =
 [[
@@ -48,8 +48,8 @@ local STRINGS =
 
 󰀏 Este Mod requer que o Mod Amontoado de Comidas esteja ativado. Ele não faz nada sozinho. Confira a página da Oficina para mais detalhes.
 
-󰀌 Versão do Mod: 1.5-A
-󰀧 Atualização: Preparando o Terreno
+󰀌 Versão do Mod: 1.8-A
+󰀧 Atualização: Hora da Pescaria
 ]],
 		pl  =
 [[
@@ -57,8 +57,8 @@ local STRINGS =
 
 󰀏 Ten mod wymaga włączenia Stosu jedzenia. Sam w sobie nic nie robi. Sprawdź stronę warsztatu po więcej informacji.
 
-󰀌 Wersja Moda: 1.5-A
-󰀧 Aktualizacja: Przygotowania do Gruntu
+󰀌 Wersja Moda: 1.8-A
+󰀧 Aktualizacja: Czas wędkowania
 ]],
 		es  =
 [[
@@ -66,14 +66,14 @@ local STRINGS =
 
 󰀏 Este Mod requiere que Montón de Alimentos esté habilitado. No hace nada por sí solo. Consulta la página del Workshop para más detalles.
 
-󰀌 Versión del Mod: 1.5-A
-󰀧 Actualización: Preparando el Terreno
+󰀌 Versión del Mod: 1.8-A
+󰀧 Actualización: Tiempo de Pesca
 ]],	
 	},
 }
 
 name                        = ChooseTranslationTable(STRINGS.NAME)
-version                     = "1.5-A"
+version                     = "1.8-A"
 
 description                 = ChooseTranslationTable(STRINGS.DESCRIPTION)
 

@@ -269,7 +269,7 @@ local kyno_warly_foods =
 	
 	milkshake_prismatic =
 	{
-		test = function(cooker, names, tags) return tags.milk and tags.berries and (tags.syrup and tags.syrup >= 2) end,
+		test = function(cooker, names, tags) return names.kyno_jellyfish_rainbow_dead and tags.milk and tags.berries and tags.syrup end,
 		priority = 10,
 		foodtype = FOODTYPE.GOODIES,
 		perishtime = TUNING.PERISH_FAST,
@@ -279,15 +279,39 @@ local kyno_warly_foods =
 		hunger = 12.5,
 		sanity = 60,
 		cooktime = .10,
+		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_GLOW,
 		potlevel = "med",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood", "honeyed"},
-		card_def = {ingredients = {{"goatmilk", 1}, {"berries", 1}, {"kyno_syrup", 2}}},
+		prefabs = { "kyno_jellyfish_rainbow_light_greater" },
+		card_def = {ingredients = {{"kyno_jellyfish_rainbow_dead", 1}, {"goatmilk", 1}, {"berries", 1}, {"kyno_syrup", 1}}},
+		oneatenfn = function(inst, eater)
+            if eater.wormlight ~= nil then
+                if eater.wormlight.prefab == "kyno_jellyfish_rainbow_light_greater" then
+                    eater.wormlight.components.spell.lifetime = 0
+                    eater.wormlight.components.spell:ResumeSpell()
+                    return
+                else
+                    eater.wormlight.components.spell:OnFinish()
+                end
+            end
+
+            local light = SpawnPrefab("kyno_jellyfish_rainbow_light_greater")
+            light.components.spell:SetTarget(eater)
+			
+            if light:IsValid() then
+                if light.components.spell.target == nil then
+                    light:Remove()
+                else
+                    light.components.spell:StartSpell()
+                end
+            end
+        end,
 	},
 	
 	nachos =
 	{
-		test = function(cooker, names, tags) return names.kyno_oil and tags.spotspice and tags.cheese and names.corn and not names.corn_cooked end,
+		test = function(cooker, names, tags) return tags.oil and tags.spotspice and tags.cheese and names.corn and not names.corn_cooked end,
 		priority = 35,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
@@ -303,7 +327,7 @@ local kyno_warly_foods =
 	
 	tom_kha_soup =
 	{
-		test = function(cooker, names, tags) return names.kyno_kokonut_halved and tags.mushrooms and names.succulent_picked and
+		test = function(cooker, names, tags) return names.kyno_kokonut_halved and tags.mushrooms and tags.succulent and
 		(names.pepper or names.pepper_cooked) end,
 		priority = 35,
 		foodtype = FOODTYPE.VEGGIE,

@@ -38,19 +38,19 @@ local kyno_foods =
 	
 	jellyopop = 
 	{
-		test = function(cooker, names, tags) return tags.fish and tags.frozen and names.twigs end,
+		test = function(cooker, names, tags) return tags.jellyfish and tags.frozen and names.twigs end,
 		priority = 20,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_SUPERFAST,
 		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
 		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 20,
-		hunger = 12.5,
-		sanity = 0,
+		hunger = 18.75,
+		sanity = 10,
 		cooktime = 0.5,
 		potlevel = "med",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"pondfish", 1}, {"ice", 1}, {"twigs", 1}}},
+		card_def = {ingredients = {{"kyno_jellyfish", 1}, {"ice", 1}, {"twigs", 1}}},
 	},
 	
 	sharkfinsoup = 
@@ -70,21 +70,6 @@ local kyno_foods =
 		oneatenfn = function(inst, eater)
 			OnFoodNaughtiness(inst, eater)
 		end,
-	},
-	
-	caviar = 
-	{
-		test = function(cooker, names, tags) return tags.roe and tags.veggie and not tags.sweetener and not tags.dairy end,
-		priority = 30,
-		foodtype = FOODTYPE.MEAT,
-		perishtime = TUNING.PERISH_MED,
-		health = 3,
-		hunger = 12.5,
-		sanity = 15,
-		cooktime = 2,
-		potlevel = "med",
-		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe", 1}, {"corn", 3}}},
 	},
 	
 	tropicalbouillabaisse =
@@ -283,7 +268,7 @@ local kyno_foods =
 	gorge_sweet_chips = 
 	{
 		test = function(cooker, names, tags) return ((names.kyno_sweetpotato or 0) + (names.kyno_sweetpotato_cooked or 0) >= 2) 
-		and names.kyno_oil and tags.spotspice end,
+		and tags.oil and tags.spotspice end,
 		priority = 35,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_FAST,
@@ -377,7 +362,7 @@ local kyno_foods =
 	
 	gorge_potato_soup = 
 	{
-		test = function(cooker, names, tags) return ((names.potato or 0) + (names.potato_cooked or 0) >= 3) and names.succulent_picked end,
+		test = function(cooker, names, tags) return ((names.potato or 0) + (names.potato_cooked or 0) >= 3) and tags.succulent end,
 		priority = 35,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_MED,
@@ -539,7 +524,7 @@ local kyno_foods =
 		hunger = 50,
 		sanity = 25,
 		cooktime = 2,
-		potlevel = "med",
+		potlevel = "low",
 		floater = TUNING.HOF_FLOATER,
 		card_def = {ingredients = {{"meat", 1}, {"kyno_flour", 2}, {"tomato", 1}}},
 	},
@@ -676,7 +661,7 @@ local kyno_foods =
 	gorge_stuffedmushroom =
 	{
 		test = function(cooker, names, tags) return ((names.kyno_white_cap or 0) + (names.kyno_white_cap_cooked or 0) >= 3) 
-		and not tags.foliage and not names.succulent_picked and not tags.dairy and not names.royal_jelly end,
+		and not tags.foliage and not tags.succulent and not tags.dairy and not names.royal_jelly end,
 		priority = 35,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_MED,
@@ -933,7 +918,7 @@ local kyno_foods =
 	gorge_creammushroom = 
 	{
 		test = function(cooker, names, tags) return tags.milk and ((names.kyno_white_cap or 0) + (names.kyno_white_cap_cooked or 0) >= 2) 
-		and names.succulent_picked and not tags.meat and not tags.fish end,
+		and tags.succulent and not tags.meat and not tags.fish end,
 		priority = 35,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_MED,
@@ -963,7 +948,7 @@ local kyno_foods =
 	
 	gorge_fettuccine = 
 	{
-		test = function(cooker, names, tags) return tags.flour and (names.garlic or names.garlic_cooked) and names.succulent_picked and tags.dairy end,
+		test = function(cooker, names, tags) return tags.flour and (names.garlic or names.garlic_cooked) and tags.succulent and tags.dairy end,
 		priority = 35,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_MED,
@@ -1036,7 +1021,7 @@ local kyno_foods =
 	
 	gorge_crab_cake = 
 	{
-		test = function(cooker, names, tags) return tags.crab and names.succulent_picked and tags.flour 
+		test = function(cooker, names, tags) return tags.crab and tags.succulent and tags.flour 
 		and tags.spotspice end,
 		priority = 35,
 		foodtype = FOODTYPE.MEAT,
@@ -1142,6 +1127,23 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed"},
 		card_def = {ingredients = {{"kyno_syrup", 2}, {"goatmilk", 2}}},
+	},
+	
+	gorge_waffles =
+	{
+		test = function(cooker, names, tags) return tags.butter and tags.egg and tags.syrup end,
+		priority = 30,
+		foodtype = FOODTYPE.GOODIES,
+		perishtime = TUNING.PERISH_MED,
+		health = 5,
+		hunger = 37.5,
+		sanity = 60,
+		cooktime = .5,
+		nameoverride = "WAFFLES",
+		potlevel = "med",
+		floater = TUNING.HOF_FLOATER,
+		tags = {"honeyed"},
+		card_def = {ingredients = {{"butter", 1}, {"bird_egg", 1}, {"kyno_syrup", 2}}},
 	},
 	
 	gorge_scone =
@@ -1261,7 +1263,7 @@ local kyno_foods =
 	
 	waterycressbowl =
 	{
-		test = function(cooker, names, tags) return (names.kyno_waterycress and names.kyno_waterycress >= 2) and names.succulent_picked and
+		test = function(cooker, names, tags) return (names.kyno_waterycress and names.kyno_waterycress >= 2) and tags.succulent and
 		(tags.veggie and tags.veggie >= 3) and not tags.inedible and not tags.egg and not tags.sweetener and not tags.fruit and not tags.meat end,
 		priority = 35,
 		foodtype = FOODTYPE.VEGGIE,
@@ -1387,6 +1389,7 @@ local kyno_foods =
 		cooktime = 1.2,
 		potlevel = "med",
 		floater = TUNING.HOF_FLOATER,
+		tags = {"popcorn"},
 		card_def = {ingredients = {{"corn", 3}, {"kyno_salt", 1}}},
 	},
 	
@@ -1740,7 +1743,7 @@ local kyno_foods =
 	
 	friesfrench =
 	{
-		test = function(cooker, names, tags) return ((names.potato or 0) + (names.potato_cooked or 0) >= 2) and names.kyno_oil and names.kyno_salt end,
+		test = function(cooker, names, tags) return ((names.potato or 0) + (names.potato_cooked or 0) >= 2) and tags.oil and names.kyno_salt end,
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SUPERSLOW,
@@ -1755,7 +1758,7 @@ local kyno_foods =
 	
 	onionrings =
 	{
-		test = function(cooker, names, tags) return ((names.onion or 0) + (names.onion_cooked or 0) >= 2) and names.kyno_oil and tags.flour 
+		test = function(cooker, names, tags) return ((names.onion or 0) + (names.onion_cooked or 0) >= 2) and tags.oil and tags.flour 
 		and not names.twigs and not tags.frozen and not tags.sweetener end,
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
@@ -1771,7 +1774,7 @@ local kyno_foods =
 	
 	donuts =
 	{
-		test = function(cooker, names, tags) return (tags.flour and tags.flour >= 2) and names.kyno_sugar and names.kyno_oil end,
+		test = function(cooker, names, tags) return (tags.flour and tags.flour >= 2) and names.kyno_sugar and tags.oil end,
 		priority = 30,
 		foodtype = FOODTYPE.GOODIES,
 		perishtime = TUNING.PERISH_SLOW,
@@ -1786,7 +1789,7 @@ local kyno_foods =
 	
 	donuts_chocolate_black =
 	{
-		test = function(cooker, names, tags) return tags.flour and names.kyno_sugar and names.kyno_oil and names.chocolate_black end,
+		test = function(cooker, names, tags) return tags.flour and names.kyno_sugar and tags.oil and names.chocolate_black end,
 		priority = 30,
 		foodtype = FOODTYPE.GOODIES,
 		perishtime = TUNING.PERISH_SLOW,
@@ -1801,7 +1804,7 @@ local kyno_foods =
 	
 	donuts_chocolate_white =
 	{
-		test = function(cooker, names, tags) return tags.flour and names.kyno_sugar and names.kyno_oil and names.chocolate_white end,
+		test = function(cooker, names, tags) return tags.flour and names.kyno_sugar and tags.oil and names.chocolate_white end,
 		priority = 30,
 		foodtype = FOODTYPE.GOODIES,
 		perishtime = TUNING.PERISH_SLOW,
@@ -1936,7 +1939,7 @@ local kyno_foods =
 	
 	chipsbag =
 	{
-		test = function(cooker, names, tags) return ((names.potato or 0) + (names.potato_cooked or 0) >= 2) and names.kyno_oil and tags.spotspice end,
+		test = function(cooker, names, tags) return ((names.potato or 0) + (names.potato_cooked or 0) >= 2) and tags.oil and tags.spotspice end,
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_MED,
@@ -2100,7 +2103,7 @@ local kyno_foods =
 	parznip_soup =
 	{
 		test = function(cooker, names, tags) return ((names.kyno_parznip or 0) + (names.kyno_parznip_cooked or 0) + (names.kyno_parznip_eaten or 0) >= 3) and
-		names.succulent_picked end,
+		tags.succulent end,
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_MED,
@@ -2288,8 +2291,8 @@ local kyno_foods =
 	
 	durianmeated =
 	{
-		test = function(cooker, names, tags) return ((names.monstermeat or 0) + (names.monstermeat_cooked or 0) >= 2) and 
-		((names.durian or 0) + (names.durian_cooked or 0) >= 2) and not tags.meat end,
+		test = function(cooker, names, tags) return (names.monstermeat or names.monstermeat_cooked) and 
+		(names.durian or names.durian_cooked) end,
 		priority = 40,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_SLOW,
@@ -2299,7 +2302,7 @@ local kyno_foods =
 		cooktime = 1.2,
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat"},
-		card_def = {ingredients = {{"monstermeat", 2}, {"durian", 2}}},
+		card_def = {ingredients = {{"monstermeat", 1}, {"durian", 1}, {"twigs", 2}}},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -2649,7 +2652,7 @@ local kyno_foods =
 	dumplings = -- Wow... they're just perogies with hamlet skin.
 	{
 		test = function(cooker, names, tags) return tags.flour and (tags.veggie and tags.veggie >= 1)
-		and (tags.meat and tags.meat < 1) and names.kyno_oil end,
+		and (tags.meat and tags.meat < 1) and tags.oil end,
 		priority = 25,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_MED,
@@ -2664,7 +2667,7 @@ local kyno_foods =
 	
 	coxinha =
 	{
-		test = function(cooker, names, tags) return (names.drumstick or names.drumstick_cooked) and tags.flour and names.kyno_oil
+		test = function(cooker, names, tags) return (names.drumstick or names.drumstick_cooked) and tags.flour and tags.oil
 		and tags.spotspice end,
 		priority = 30,
 		foodtype = FOODTYPE.MEAT,
@@ -2767,7 +2770,7 @@ local kyno_foods =
 	
 	wobsterbreaded =
 	{
-		test = function(cooker, names, tags) return tags.wobster and tags.spotspice and tags.flour and names.kyno_oil end,
+		test = function(cooker, names, tags) return tags.wobster and tags.spotspice and tags.flour and tags.oil end,
 		priority = 35,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_PRESERVED,
@@ -2891,7 +2894,7 @@ local kyno_foods =
 	pasty_meat =
 	{
 		test = function(cooker, names, tags) return (tags.meat and tags.meat >= 1) and tags.flour 
-		and tags.veggie and names.kyno_oil and not tags.wobster end,
+		and tags.veggie and tags.oil and not tags.wobster end,
 		priority = 35,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_MED,
@@ -2905,7 +2908,7 @@ local kyno_foods =
 	
 	pasty_cheese =
 	{
-		test = function(cooker, names, tags) return tags.cheese and tags.flour and tags.spotspice and names.kyno_oil end,
+		test = function(cooker, names, tags) return tags.cheese and tags.flour and tags.spotspice and tags.oil end,
 		priority = 35,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_MED,
@@ -2985,22 +2988,147 @@ local kyno_foods =
 		card_def = {ingredients = {{"kyno_rice", 1}, {"kyno_beanbugs", 2}, {"twigs", 1}}},
 	},
 	
-	--[[
-	strawberrygrinder =
+	-- RIP STRAWBERRYGRINDER
+	trufflesgrinder =
 	{
-		test = function(cooker, names, tags) return ((names.kyno_strawberry or 0) + (names.kyno_strawberry_cooked or 0) >= 2) and 
-		tags.flour and tags.meat and not tags.fish end,
+		test = function(cooker, names, tags) return (tags.meat and tags.meat >= 1) and (names.kyno_truffles or names.kyno_truffles_cooked)
+		and tags.flour end,
+		priority = 30,
+		foodtype = FOODTYPE.MEAT,
+		perishtime = TUNING.PERISH_PRESERVED,
+		health = 30,
+		hunger = 62.5,
+		sanity = 0,
+		cooktime = 1.5,
+		goldvalue = 5,
+		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_TRUFFLES,
+		potlevel = "high",
+		floater = TUNING.HOF_FLOATER,
+		tags = {"truffles"},
+		card_def = {ingredients = {{"kyno_truffles", 2}, {"kyno_flour", 1}, {"meat", 1}}},
+		oneatenfn = function(inst, eater)
+			eater:AddDebuff("kyno_trufflesbuff", "kyno_trufflesbuff")
+		end,
+	},
+	
+	sporecappie =
+	{
+		test = function(cooker, names, tags) return ((names.kyno_sporecap or 0) + (names.kyno_sporecap_cooked or 0) >= 2) and
+		tags.flour and tags.sweetener end,
+		priority = 35,
+		foodtype = FOODTYPE.VEGGIE,
+		perishtime = TUNING.PERISH_PRESERVED,
+		health = -20,
+		hunger = 37.5,
+		sanity = -10,
+		cooktime = 2,
+		potlevel = "high",
+		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_SPORECAP,
+		floater = TUNING.HOF_FLOATER,
+		tags = {"monstermeat", "acidrainimmune"},
+		card_def = {ingredients = {{"kyno_sporecap", 2}, {"kyno_flour", 1}, {"honey", 1}}},
+		oneatenfn = function(inst, eater)
+			if eater ~= nil and eater:HasTag("playermonster") and
+			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
+			not eater:HasTag("playerghost") then
+				eater.components.health:DoDelta(20)
+				eater.components.sanity:DoDelta(10)
+			end
+			
+			eater:AddDebuff("kyno_poisonimmunitybuff", "kyno_poisonimmunitybuff")
+		end,
+	},
+	
+	sporecap_skewers =
+	{
+		test = function(cooker, names, tags) return ((names.kyno_sporecap_dark or 0) + (names.kyno_sporecap_dark_cooked or 0) >= 2) and
+		tags.veggie and names.twigs end,
+		priority = 35,
+		foodtype = FOODTYPE.VEGGIE,
+		perishtime = TUNING.PERISH_MED,
+		health = -30,
+		hunger = 45,
+		sanity = -20,
+		cooktime = 1,
+		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_SPORECAP_DARK,
+		floater = TUNING.HOF_FLOATER,
+		tags = {"monstermeat", "acidrainimmune"},
+		card_def = {ingredients = {{"kyno_sporecap_dark", 2}, {"carrot", 1}, {"twigs", 1}}},
+		oneatenfn = function(inst, eater)
+			if eater ~= nil and eater:HasTag("playermonster") and
+			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
+			not eater:HasTag("playerghost") then
+				eater.components.health:DoDelta(30)
+				eater.components.sanity:DoDelta(20)
+			end
+			
+			eater:AddDebuff("kyno_acidimmunitybuff", "kyno_acidimmunitybuff")
+		end,
+	},
+	
+	-- Mandrake Soup but with meat instead.
+	swordfishfeast =
+	{
+		test = function(cooker, names, tags) return tags.swordfish and tags.cheese and (names.fig or names.fig_cooked) and tags.sweetener end,
 		priority = 30,
 		foodtype = FOODTYPE.MEAT,
 		perishtime = TUNING.PERISH_MED,
-		health = 40,
-		hunger = 62.5
-		sanity = 0,
-		cooktime = 1.5,
+		health = 100,
+		hunger = 150,
+		sanity = 25,
+		cooktime = 2,
+		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_EXQUISITE,
+		scale = 1.5,
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_strawberry", 2}, {"kyno_flour", 1}, {"meat", 1}}},
+		tags = {"sharkboifood", "exquisite"},
+		card_def = {ingredients = {{"kyno_swordfish_dead", 1}, {"cheese_yellow", 1}, {"fig", 1}, {"honey", 1}}},
 	},
-	]]--
+	
+	monkeyislandmeal =
+	{
+		test = function(cooker, names, tags) return names.wobster_monkeyisland_land and tags.banana end,
+		priority = 35,
+		foodtype = FOODTYPE.GOODIES,
+		perishtime = TUNING.PERISH_MED,
+		health = 20,
+		hunger = 25,
+		sanity = 20,
+		cooktime = .15,
+		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_CURSE_MONKEY,
+		floater = TUNING.HOF_FLOATER,
+		tags = {"monkeyqueenbribe"},
+		card_def = {ingredients = {{"wobster_monkeyisland_land", 1}, {"cave_banana", 1}, {"twigs", 2}}},
+		oneatenfn = function(inst, eater)
+			if eater.components.inventory ~= nil and eater.components.cursable ~= nil
+			and not (eater.components.health ~= nil and eater.components.health:IsDead()) and 
+			not eater:HasTag("playerghost") then
+				local prop = eater.components.inventory:FindItem(function(item) return item.prefab == "cursed_monkey_token" end)
+				
+				if prop ~= nil then
+					eater.components.cursable:RemoveCurse("MONKEY", 10)
+				end
+			end
+		end,
+	},
+	
+	brainmettersoup =
+	{
+		test = function(cooker, names, tags) return names.kyno_brainrock_coral and tags.jellyfish and tags.algae and not tags.inedible end,
+		priority = 35,
+		foodtype = FOODTYPE.MEAT,
+		perishtime = TUNING.PERISH_FAST,
+		health = -15,
+		hunger = 18.75,
+		sanity = 50,
+		cooktime = 1,
+		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_CRAFTING,
+		floater = TUNING.HOF_FLOATER,
+		prefabs = { "kyno_craftingbuff" },
+		card_def = {ingredients = {{"kyno_brainrock_coral", 1}, {"kyno_jellyfish", 1}, {"kyno_seaweeds", 1}}},
+		oneatenfn = function(inst, eater)
+			eater:AddDebuff("kyno_craftingbuff", "kyno_craftingbuff")
+		end,
+	},
 }
 
 for k, recipe in pairs(kyno_foods) do
