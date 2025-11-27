@@ -94,16 +94,6 @@ local HOF_SPICES   =
 		imagename  = "spice_mind",
 		floatable  = 0.85,
 	},
-	
-	--[[
-	SPICE_MOON     =
-	{
-		animname   = bankbuild,
-		imageatlas = atlasbuild,
-		imagename  = "spice_moon",
-		floatable  = 0.85,
-	},
-	]]--
 }
 
 local prefs = {}
