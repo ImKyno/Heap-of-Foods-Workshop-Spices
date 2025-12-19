@@ -17,7 +17,7 @@ local kyno_foods =
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_SPEED,
 		potlevel = "med",
 		floater = TUNING.HOF_FLOATER,
-		tags = {"honeyed", "drinkable_food", "nospice"},
+		tags = {"honeyed", "fooddrink", "nospice"},
 		card_def = {ingredients = {{"kyno_coffeebeans_cooked", 3}, {"honey", 1}}},
 	},
 	
@@ -151,7 +151,7 @@ local kyno_foods =
 		sanity = 33,
 		cooktime = 0.5,
 		floater = TUNING.HOF_FLOATER,
-		tags = {"honeyed", "drinkable_food"},
+		tags = {"honeyed", "fooddrink"},
 		card_def = {ingredients = {{"kyno_tealeaf", 2}, {"honey", 1}, {"ice", 1}}},
 	},
 	
@@ -170,7 +170,7 @@ local kyno_foods =
 		cooktime = 1,
 		potlevel = "low",
 		floater = TUNING.HOF_FLOATER,
-		tags = {"honeyed", "drinkable_food"},
+		tags = {"honeyed", "fooddrink"},
 		card_def = {ingredients = {{"kyno_tealeaf", 2}, {"honey", 2}}},
 	},
 	
@@ -250,8 +250,7 @@ local kyno_foods =
 	-- The Gorge Foods.
 	gorge_bread = 
 	{
-		test = function(cooker, names, tags) return (tags.flour and tags.flour == 3 or (tags.flour and tags.flour == 4)) 
-		and not tags.spotspice end,
+		test = function(cooker, names, tags) return (tags.flour and tags.flour >= 3) and not tags.spotspice end,
 		priority = 1,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SUPERSLOW,
@@ -1189,7 +1188,7 @@ local kyno_foods =
 		cooktime = 1,
 		potlevel = "med",
 		floater = TUNING.HOF_FLOATER,
-		tags = {"honeyed", "drinkable_food"},
+		tags = {"honeyed", "fooddrink"},
 		card_def = {ingredients = {{"kyno_sap", 4}}},
 	},
 	
@@ -1408,7 +1407,7 @@ local kyno_foods =
 		cooktime = .5,
 		potlevel = "med",
 		floater = TUNING.HOF_FLOATER,
-		tags = {"drinkable_food"},
+		tags = {"fooddrink"},
 		card_def = {ingredients = {{"fig", 2}, {"ice", 2}}},
 	},
 	
@@ -1427,7 +1426,7 @@ local kyno_foods =
 		cooktime = .5,
 		potlevel = "med",
 		floater = TUNING.HOF_FLOATER,
-		tags = {"drinkable_food"},
+		tags = {"fooddrink"},
 		card_def = {ingredients = {{"kyno_kokonut_halved", 1}, {"ice", 2}, {"twigs", 1}}},
 	},
 	
@@ -1595,7 +1594,7 @@ local kyno_foods =
 		cooktime = 1.1,
 		potlevel = "med",
 		floater = TUNING.HOF_FLOATER,
-		tags = {"drinkable_food"},
+		tags = {"fooddrink"},
 		card_def = {ingredients = {{"ice", 2}, {"goatmilk", 2}}},
 	},
 	
@@ -1637,7 +1636,7 @@ local kyno_foods =
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_CLEAR,
 		potlevel = "low",
 		floater = TUNING.HOF_FLOATER,
-		tags = {"drinkable_food", "nospice"},
+		tags = {"fooddrink", "nospice"},
 		card_def = {ingredients = {{"ice", 4}}},
 		oneatenfn = function(inst, eater)
 			if eater.components.debuffable ~= nil then 
@@ -2481,7 +2480,7 @@ local kyno_foods =
 		cooktime = 0.5,
 		potlevel = "high",
 		floater = TUNING.HOF_FLOATER,
-		tags = {"honeyed", "drinkable_food"},
+		tags = {"honeyed", "fooddrink"},
 		card_def = {ingredients = {{"kyno_pineapple_halved", 1}, {"kyno_kokonut_halved", 1}, {"honey", 1}, {"ice", 1}}},
 	},
 	
@@ -2498,7 +2497,7 @@ local kyno_foods =
 		sanity = 33,
 		cooktime = 1.2,
 		floater = TUNING.HOF_FLOATER,
-		tags = {"drinkable_food"},
+		tags = {"fooddrink"},
 		card_def = {ingredients = {{"tillweed", 2}, {"ice", 2}}},
 	},
 	
@@ -2822,7 +2821,7 @@ local kyno_foods =
 		sanity = 5,
 		cooktime = 1,
 		floater = TUNING.HOF_FLOATER,
-		tags = {"honeyed", "drinkable_food"},
+		tags = {"honeyed", "fooddrink"},
 		card_def = {ingredients = {{"kyno_rice", 1}, {"goatmilk", 1}, {"honey", 1}, {"ice", 1}}},
 	},
 	
@@ -2840,7 +2839,7 @@ local kyno_foods =
 		sanity = 60,
 		cooktime = 1.1,
 		floater = TUNING.HOF_FLOATER,
-		tags = {"drinkable_food"},
+		tags = {"fooddrink"},
 		card_def = {ingredients = {{"wobster_sheller_land", 1}, {"tomato", 1}, {"pepper", 2}}},
 	},
 	
@@ -2858,7 +2857,7 @@ local kyno_foods =
 		cooktime = 0.5,
 		scale = .8,
 		floater = TUNING.HOF_FLOATER,
-		tags = {"honeyed", "drinkable_food"},
+		tags = {"honeyed", "fooddrink"},
 		card_def = {ingredients = {{"pomegranate", 1}, {"ice", 1}, {"honey", 2}}},
 	},
 	
