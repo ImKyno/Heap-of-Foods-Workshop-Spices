@@ -22,7 +22,7 @@ local STRINGS =
 󰀏 This Mod requires that Heap of Foods is enabled. It does nothing on its own. Check Workshop Page for more details.
 
 󰀌 Mod Version: 2.3-A
-󰀧 Update: Heap of Foods 5th Anniversary
+󰀧 Update: The Fish Registry
 ]],
 		zh  =
 [[
@@ -31,7 +31,7 @@ local STRINGS =
 󰀏 此模组需要启用《更多料理 (Heap of Foods)》。它本身没有任何功能。请查看工作坊页面获取更多信息。
 
 󰀌 Mod 版本： 2.3-A
-󰀧 更新内容： 美食堆五周年
+󰀧 更新内容： 鱼类登记处
 ]],
 		zht =
 [[
@@ -40,7 +40,7 @@ local STRINGS =
 󰀏 此模組需要啟用《食物堆積 (Heap of Foods)》。它本身沒有任何功能。請查看工作坊頁面以獲取更多資訊。
 
 󰀌 Mod 版本： 2.3-A
-󰀧 更新內容： 美食堆五周年
+󰀧 更新內容： 魚類登記處
 ]],
 		pt  =
 [[
@@ -49,7 +49,7 @@ local STRINGS =
 󰀏 Este Mod requer que o Mod Amontoado de Comidas esteja ativado. Ele não faz nada sozinho. Confira a página da Oficina para mais detalhes.
 
 󰀌 Versão do Mod: 2.3-A
-󰀧 Atualização: 5º Aniversário do Amontoado de Comidas
+󰀧 Atualização: O Registro de Peixes
 ]],
 		pl  =
 [[
@@ -58,7 +58,7 @@ local STRINGS =
 󰀏 Ten mod wymaga włączenia Stosu jedzenia. Sam w sobie nic nie robi. Sprawdź stronę warsztatu po więcej informacji.
 
 󰀌 Wersja Moda: 2.3-A
-󰀧 Aktualizacja: 5. rocznica Stos jedzenia
+󰀧 Aktualizacja: Rejestr ryb
 ]],
 		es  =
 [[
@@ -67,7 +67,7 @@ local STRINGS =
 󰀏 Este Mod requiere que Montón de Alimentos esté habilitado. No hace nada por sí solo. Consulta la página del Workshop para más detalles.
 
 󰀌 Versión del Mod: 2.3-A
-󰀧 Actualización: Montón de Alimentos 5º Aniversario
+󰀧 Actualización: El Registro de Peces
 ]],	
 	},
 }
