@@ -21,8 +21,8 @@ local STRINGS =
 
 󰀏 This Mod requires that Heap of Foods is enabled. It does nothing on its own. Check Workshop Page for more details.
 
-󰀌 Mod Version: 2.4-A
-󰀧 Update: The Fish Registry
+󰀌 Mod Version: 2.5-A
+󰀧 Update: Chicken Week
 ]],
 		zh  =
 [[
@@ -30,8 +30,8 @@ local STRINGS =
 
 󰀏 此模组需要启用《更多料理 (Heap of Foods)》。它本身没有任何功能。请查看工作坊页面获取更多信息。
 
-󰀌 Mod 版本： 2.4-A
-󰀧 更新内容： 鱼类登记处
+󰀌 Mod 版本： 2.5-A
+󰀧 更新内容： 鸡肉周
 ]],
 		zht =
 [[
@@ -39,8 +39,8 @@ local STRINGS =
 
 󰀏 此模組需要啟用《食物堆積 (Heap of Foods)》。它本身沒有任何功能。請查看工作坊頁面以獲取更多資訊。
 
-󰀌 Mod 版本： 2.4-A
-󰀧 更新內容： 魚類登記處
+󰀌 Mod 版本： 2.5-A
+󰀧 更新內容： 雞肉週
 ]],
 		pt  =
 [[
@@ -48,8 +48,8 @@ local STRINGS =
 
 󰀏 Este Mod requer que o Mod Amontoado de Comidas esteja ativado. Ele não faz nada sozinho. Confira a página da Oficina para mais detalhes.
 
-󰀌 Versão do Mod: 2.4-A
-󰀧 Atualização: O Registro de Peixes
+󰀌 Versão do Mod: 2.5-A
+󰀧 Atualização: Semana da Galinha
 ]],
 		pl  =
 [[
@@ -57,8 +57,8 @@ local STRINGS =
 
 󰀏 Ten mod wymaga włączenia Stosu jedzenia. Sam w sobie nic nie robi. Sprawdź stronę warsztatu po więcej informacji.
 
-󰀌 Wersja Moda: 2.4-A
-󰀧 Aktualizacja: Rejestr ryb
+󰀌 Wersja Moda: 2.5-A
+󰀧 Aktualizacja: Tydzień Kurczaka
 ]],
 		es  =
 [[
@@ -66,14 +66,14 @@ local STRINGS =
 
 󰀏 Este Mod requiere que Montón de Alimentos esté habilitado. No hace nada por sí solo. Consulta la página del Workshop para más detalles.
 
-󰀌 Versión del Mod: 2.4-A
-󰀧 Actualización: El Registro de Peces
+󰀌 Versión del Mod: 2.5-A
+󰀧 Actualización: Semana del Pollo
 ]],	
 	},
 }
 
 name                        = ChooseTranslationTable(STRINGS.NAME)
-version                     = "2.4-A"
+version                     = "2.5-A"
 
 description                 = ChooseTranslationTable(STRINGS.DESCRIPTION)
 
